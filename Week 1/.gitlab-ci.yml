@@ -1,0 +1,35 @@
+# TODO-STEP 1: Define the stages of the CI/CD pipeline
+# Uncomment the following lines and replace <STAGE_NAME> with appropriate stage names
+# For this exercise, we will use 'build' and 'test' stages
+stages:
+  #- <STAGE_NAME>
+  #- <STAGE_NAME>
+
+# Build stage
+# TODO-STEP 2: Create your "Build" stage
+# Uncomment the following line and give your job a descriptive name
+#<JOB_NAME>:
+  # TODO-STEP 2a: Specify the stage for this job
+  #stage: <STAGE_NAME>
+  image: python:3.9  # Do not change this. Keep this as is.
+  script:
+    - echo "Installing dependencies..."
+    # TODO-STEP 2b: Add command to install dependencies
+    # Hint: Use pip to install packages from requirements.txt
+    #- pip install -r <FILE_NAME>.txt
+
+# Test stage
+# TODO-STEP 3: Create your "Test" stage
+# Uncomment the following line and give your job a descriptive name
+#<JOB_NAME>:
+  # TODO-STEP 3a: Specify the stage for this job
+  #stage: <STAGE_NAME>
+  image: python:3.9  # Do not change this. Keep this as is.
+  script:
+    - echo "Running tests..."
+    - pip install -r requirements.txt 
+    # TODO-STEP 3b: Add command to run tests
+    # Hint: Write 'pytest' to automatically execute your test cases in the 'test_app.py' file.
+    #- <COMMAND_TO_RUN_TESTS>
+
+# Remember to remove the '#' symbol to uncomment lines when filling in the placeholders
