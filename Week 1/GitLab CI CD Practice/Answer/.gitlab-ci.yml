@@ -1,0 +1,123 @@
+# TODO-STEP 1: Define the Stages
+stages:
+  - build
+  - test
+  # Required for Step- Basic Task 2: Manual Job Execution 
+  - deploy
+
+# TODO-STEP 2: Create the "Build" Stage
+build_job:
+  stage: build
+  image: python:3.9
+  script:
+    - echo "Installing dependencies..."
+    - pip install -r requirements.txt
+
+# TODO-STEP 3: Create the "Test" Stage
+test_job:
+  stage: test
+  image: python:3.9
+  script:
+    - echo "Running tests..."
+    - pip install -r requirements.txt 
+    - pytest
+
+# Additional Practice Tasks and Challenges
+
+# Basic Task 1: Conditional Job Execution
+## Example 1: This job runs only when python files are changed.
+count_python_files:
+  stage: test
+  image: python:3.9
+  script:
+    - echo "Counting the number of Python files changed..."
+    - git diff --name-only $CI_COMMIT_BEFORE_SHA $CI_COMMIT_SHA | grep '\.py$' | wc -l
+  rules:
+    - changes:
+        - "*.py"
+
+  # Helper Explanation:
+  # "Conditional jobs" are tasks that run only when specific conditions are met. 
+  # Such jobs help make the workflow (CI/CD pipeline) more efficient by executing
+  # task-specific commands, which saves time and resources in CI/CD processes. 
+
+## Example 2: This job runs only when Python files are changed.
+lint_job:
+  stage: test
+  image: python:3.9
+  script:
+    - pip install flake8
+    - flake8 .
+  rules:
+    - changes:
+        - "*.py"
+
+  # Job Explanation:
+  # Linting jobs ensure code quality, consistency, and maintainability.
+  # Running conditional jobs helps keep code standards high without 
+  # slowing down the CI/CD pipeline when there are no code changes.
+  #
+  # Helpful Reference: https://perforce.com/blog/qac/what-is-linting
+
+# Basic Task 2: Manual Job Execution
+## Example: This job requires a person (manual intervention) to start it.
+deploy_job:
+  stage: deploy
+  script:
+    - echo "Deploying application..."
+  when: manual
+
+  # Job Explanation:
+  # Manual jobs are important for making sure deployments are done carefully 
+  # and involve human approval. Such manual jobs are crucial for controlled 
+  # deployments and human-in-the-loop processes. These jobs can be considered 
+  # like a safety switch which requires a human to flip before initiating an
+  # important process. Such jobs are commonly used for production deployments
+  # or any task requiring explicit approval.
+
+# Basic Task 3: Use Variables
+## Example: This job shows how to use variables and conditional logic in a 
+##          CI/CD pipeline. These are important for providing visibility into
+##          the build process and ensuring correct versions and environments 
+##          are being used.
+version_info_job:
+  stage: test
+  script:
+    # Using predefined GitLab CI variables
+    - echo "Running tests for $CI_PROJECT_NAME"
+    - echo "Current branch- $CI_COMMIT_BRANCH"
+    
+    # Using a command to get system information
+    - echo "Python version- $(python --version)"    # Quiz: When you inspect the logs, you will find this command fails. Why do you think this command fails? What can be added in this job to fix this?
+    
+    # Using custom variables
+    - echo "App version- $APP_VERSION"
+    - echo "Environment- $DEPLOY_ENVIRONMENT"
+    
+    # Example of conditional execution based on a variable
+    - |
+      if [ "$DEPLOY_ENVIRONMENT" = "production" ]; then
+        echo "Performing production checks & operations..."
+        # In a real scenario, you will run more comprehensive tests
+        # or perform environment-specific configurations here ...
+      else
+        echo "Skipping production-specific checks & operations..."
+      fi
+
+  # Defining custom variables
+  variables:
+    APP_VERSION: "1.2.3"
+    DEPLOY_ENVIRONMENT: "staging"
+
+  # Job Explanation:
+  # This job uses both: 
+  #    - predefined GitLab CI variables (like $CI_PROJECT_NAME) 
+  #    - and, custom variables (like $APP_VERSION).
+  # This also demonstrates how to run conditional tasks based on the environment,
+  # which is important for managing different configurations between staging and
+  # production deployments.
+  #
+  # Such jobs are often used at the start of a pipeline to provide context for 
+  # subsequent jobs and give an overview of the build environment. It is 
+  # particularly valuable in complex projects having multiple environments and 
+  # frequent releases.
