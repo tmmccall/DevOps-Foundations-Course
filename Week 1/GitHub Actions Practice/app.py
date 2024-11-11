@@ -1,22 +1,27 @@
 from flask import Flask, request, jsonify
 
+
 app = Flask(__name__)
+
 
 @app.route('/api/test')
 def hello():
-    return {'message':'Hello World!'}
+    return {'message': 'Hello World!'}
+
 
 # Addition operation
 @app.route('/api/add', methods=['POST'])
 def add():
     data_request = request.get_json()
-    if (not data_request) or ('number_1' not in data_request) or ('number_2' not in data_request):
+    if (not data_request or 'number_1' not in data_request or
+            'number_2' not in data_request):
         return jsonify({'error': 'Invalid input'}), 400
 
     number_1 = float(data_request['number_1'])
     number_2 = float(data_request['number_2'])
     result = number_1 + number_2
     return jsonify({'result': result})
+
 
 # Optional: Completing the following TODOs is optional for more practice
 
@@ -38,7 +43,7 @@ def add():
 # def divide():
 #     # Write code here
 
-# TODO: Add more routes and operations! Go creative! Create your own calculator!
+# TODO: Add more routes and operations! Create your own calculator!
 # For example:
 # - Square root
 # - Exponentiation

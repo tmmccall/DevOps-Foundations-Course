@@ -2,6 +2,7 @@ import unittest
 import json
 from app import app
 
+
 class TestApp(unittest.TestCase):
     def setUp(self):
         self.client = app.test_client()
@@ -16,8 +17,8 @@ class TestApp(unittest.TestCase):
             "number_1": 5,
             "number_2": 3
         })
-        response = self.client.post('/api/add', 
-                                    data=payload, 
+        response = self.client.post('/api/add',
+                                    data=payload,
                                     content_type='application/json')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json, {"result": 8})
@@ -26,14 +27,15 @@ class TestApp(unittest.TestCase):
         payload = json.dumps({
             "number_1": 5
         })
-        response = self.client.post('/api/add', 
-                                    data=payload, 
+        response = self.client.post('/api/add',
+                                    data=payload,
                                     content_type='application/json')
         self.assertEqual(response.status_code, 400)
         self.assertEqual(response.json, {"error": "Invalid input"})
 
     # Optional: Tests for additional operations
-    # Uncomment and complete these tests if you implement the corresponding routes
+    # Uncomment and complete these tests if you implement
+    # the below routes
 
     # def test_multiply_endpoint(self):
     #     # Prepare test data
@@ -41,14 +43,15 @@ class TestApp(unittest.TestCase):
     #         "number_1": 4,
     #         "number_2": 5
     #     })
-    #     
+    #
     #     # TODO: Get Response from API endpoint '/api/multiply'
-    #     # response = self.client.post('/api/multiply', data=payload, content_type='application/json')
-    #     
+    #     # response = self.client.post('/api/multiply', data=payload,
+    #     #                             content_type='application/json')
+    #
     #     # TODO: Assert equals if API response is OK (200)
     #     # self.assertEqual(response.status_code, 200)
-    #     
-    #     # TODO: Assert equals if API response 'result' is 20 (i.e. number_1 * number_2)
+    #
+    #     # TODO: Assert equals if API response 'result' is 20 (4 * 5)
     #     # self.assertEqual(response.json, {"result": 20})
 
     # def test_subtract_endpoint(self):
@@ -58,6 +61,7 @@ class TestApp(unittest.TestCase):
     #     # Write test code here
 
     # Add more tests for any additional routes created
+
 
 if __name__ == '__main__':
     unittest.main()
