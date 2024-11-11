@@ -1,0 +1,169 @@
+# TODO-STEP 1: Define the Workflow Name
+name: Python CI/CD Pipeline
+
+# TODO-STEP 2: Define the Trigger Events
+on:
+  push:
+    # Example of how to trigger on push to 'main' or 'develop' branches 
+    # branches: [ main, develop ]  
+  pull_request:
+    # Example of how to trigger on push to 'main' or 'develop' branches 
+    # branches: [ main, develop ] 
+  workflow_dispatch:  # Allow manual job trigger of the workflow from GitHub Actions UI
+
+# Additional Practice Task: Conditional Job Execution
+# Basic Task 3: Define environment variables
+env:
+  APP_VERSION: "1.2.3"
+  DEPLOY_ENVIRONMENT: "staging"
+
+jobs:
+  # TODO-STEP 3: Create the "Build" Job
+  build:
+    runs-on: ubuntu-latest  
+    steps:
+    - uses: actions/checkout@v2  
+    - name: Set up Python
+      uses: actions/setup-python@v2  
+      with:
+        python-version: 3.9  
+    - name: Install dependencies
+      # Add command to install dependencies
+      run: |
+        echo "Installing dependencies..."
+        pip install -r requirements.txt  # Install project dependencies
+
+  # TODO-STEP 4: Create the "Test" Job
+  test:
+    # Ensure this job runs after the build job
+    needs: build  # This job depends on the build job
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2  
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      # Add command to install dependencies
+      run: pip install -r requirements.txt  
+    - name: Run tests
+      # Add command to run tests
+      run: pytest  
+
+  # Additional Practice Task: Conditional Job Execution
+
+  # Basic Task 1: Conditional Job Execution
+  ## Example 1: This job runs only on a pull requests.
+  check_pr_title_and_info:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'  
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Check Pull Request Title
+      run: |
+        PR_TITLE="${{ github.event.pull_request.title }}"
+        echo "Checking PR title: $PR_TITLE"
+        if [[ $PR_TITLE == *"WIP"* ]]; then
+          echo "This is a 'Work in Progress' Pull Request!"
+        elif [[ $PR_TITLE == *"URGENT"* ]]; then
+          echo "This Pull Request is marked as URGENT!"
+        else
+          echo "This is a regular Pull Request..."
+        fi
+    
+    - name: Display information about Pull Request
+      run: |
+        echo "PR Event Number: ${{ github.event.number }}"
+        echo "Author of PR: ${{ github.event.pull_request.user.login }}"
+        echo "Branch: ${{ github.head_ref }}"
+
+
+    # Helper Explanation:
+    # "Conditional jobs" are tasks that run only when specific conditions are met. 
+    # Such jobs help make the workflow (CI/CD pipeline) more efficient by executing
+    # task-specific commands, which saves time and resources in CI/CD processes. 
+    
+    # Job Explanation:
+    # The job performs two main tasks:
+    # 1. "Check Pull Request Title": This checks the title of the pull request for 
+    #    specific keywords (like, "WIP" or "URGENT") and prints a output based
+    #    on the title content. This can be useful for quickly identifying the status
+    #    or priority of a pull request.
+    #
+    # 2. "Display information about Pull Request": This displays/prints information 
+    #    about the pull request, like: its number, the author, and the branch name.
+    #    This information can be valuable for tracking and managing various pull requests. 
+    #
+    # Overall, by conditionally running jobs on pull requests and analyzing their metadata,
+    # such job helps in automating parts of the code review process, by providing quick
+    # insights about the incoming changes without requiring manual intervention.
+
+
+  # Basic Task 2: Manual Job Execution
+  manual_job:
+    needs: [build, test]  # This job depends on both build and test jobs
+    runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch'  # This job is triggered manually from GitHub UI
+
+    steps:
+    - name: Manual step to triger deployment
+      run: echo "This job is triggered manually. Deploying application..."
+
+    # Job Explanation:
+    # Manual jobs are important for making sure deployments are done carefully 
+    # and involve human approval. Such manual jobs are crucial for controlled 
+    # deployments and human-in-the-loop processes. These jobs can be considered 
+    # like a safety switch which requires a human to flip before initiating an
+    # important process. Such jobs are commonly used for production deployments
+    # or any task requiring explicit approval.
+
+
+  # Basic Task 3: Use Variables
+  version_info_job:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+
+    - name: Display version info
+      run: |
+        # Using predefined GitHub Actions variables
+        echo "Running tests for ${{ github.repository }}"
+        echo "Current branch- ${{ github.ref_name }}"
+        
+        # Using a command to get system information
+        echo "Python version- $(python --version)"
+
+        # Using custom variables
+        echo "App version- ${{ env.APP_VERSION }}"
+        echo "Environment- ${{ env.DEPLOY_ENVIRONMENT }}"
+        
+        # Example of conditional execution based on a variable
+        if [ "${{ env.DEPLOY_ENVIRONMENT }}" = "production" ]; then
+          echo "Performing production checks & operations..."
+          # In a real scenario, you would run more comprehensive tests
+          # or perform environment-specific configurations here ...
+        else
+          echo "Skipping production-specific checks & operations..."
+        fi
+
+    # Job Explanation:
+    # This job uses both: 
+    #    - predefined GitLab CI variables (like $CI_PROJECT_NAME) 
+    #    - and, custom variables (like $APP_VERSION).
+    # This also demonstrates how to run conditional tasks based on the environment,
+    # which is important for managing different configurations between staging and
+    # production deployments.
+    #
+    # Such jobs are often used at the start of a pipeline to provide context for 
+    # subsequent jobs and give an overview of the build environment. It is 
+    # particularly valuable in complex projects having multiple environments and 
+    # frequent releases.
