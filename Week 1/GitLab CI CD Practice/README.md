@@ -103,7 +103,7 @@ After completing the `.gitlab-ci.yml` file:
     - **HINT:** Refer to `variables` to define CI/CD variables for jobs ([Click Here](https://docs.gitlab.com/ee/ci/yaml/#variables)).
 
 
-> **NOTE:** A GitLab YAML config with examples for the above tasks will be available on 8th November EOD.
+> **SOLUTION:** The answers and examples of above task can be found in the file [`Answer/.gitlab-ci.yml`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Week%201/GitLab%20CI%20CD%20Practice/Answer/.gitlab-ci.yml).
 
 ## (OPTIONAL) Explore Intermediate-level challenges:
 

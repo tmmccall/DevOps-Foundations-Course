@@ -110,7 +110,7 @@ After completing the `github-ci.yml` file:
         - [jobs.<job_id>.steps[*].env](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsenv)
         - [jobs.<job_id>.container.env](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_idcontainerenv)
 
-> **NOTE:** A GitHub Actions workflow with examples for the above tasks will be available on 8th November EOD.
+> **SOLUTION:** The answers and examples of above task can be found in the file [`Answer/github-ci.yml`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Week%201/GitHub%20Actions%20Practice/Answer/github-ci.yml).
 
 ## (OPTIONAL) Explore Intermediate-level challenges:
 
