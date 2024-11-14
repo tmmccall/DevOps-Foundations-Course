@@ -23,7 +23,7 @@ Goldberg CS Building 6050 University Ave.
 ## Course Timeline
 
 1. **Session 1**: Introduction to DevOps & CI/CD **(November 5)**
-    - Core Topics:
+    - _Core Topics_:
         - Traditional Software Development Lifecycle
         - DevOps: Concepts, Benefits, and Lifecycle Phases
         - Seven Major DevOps Practices
@@ -32,8 +32,16 @@ Goldberg CS Building 6050 University Ave.
         - _Exploring GitHub Actions_ (YAML configuration)
 
 2. **Session 2**: Containerisation and Orchestration using Docker **(November 12)**
+    - _Core Topics_:
+        - Understanding Virtual Machines (VMs)
+        - Introduction to Containerization
+        - Containers vs Virtual Machines
+        - Docker Fundamentals
+        - Docker architecture
+        - Docker images and containers
+        - Basic Docker commands 
   
-3. **Session 3**: Cloud computing fundamentals, Infrastructure as Code, and container Deployment on AWS **(November 19)**
+3. **Session 3**: On **(November 19)**
 
 4. **Session 4**: Final Exam & Project QnA session **(November 26)**
 
