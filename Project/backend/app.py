@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import math
 
 # Initialize Flask application
 app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Function to validate input fields recieved in the request payload
 def validate_input_request_fields(data_request, required_fields):
@@ -138,4 +140,4 @@ def logarithm():
 
 if __name__ == '__main__':
     # Run the Flask application on port 
-    app.run(host='0.0.0.0', port=6000)
+    app.run(host='0.0.0.0', port=5000)
