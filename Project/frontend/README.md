@@ -8,7 +8,7 @@ This directory will contain the frontend code for the `Calculator Application` b
 - **Advanced operations**: square root, logarithm 
 - Clear function to reset the calculator
 - Toggle the negative sign (+/-) of input number
-- Formatting for large numbers using exponential notation to avoid spilling outside display 
+- Formatting for large numbers using exponential notation to avoid spilling outside the display 
 
 ### Prerequisites
 1. **Node.js**: To test if it is installed, open the Command Line `Terminal`, and run:
@@ -26,7 +26,7 @@ This directory will contain the frontend code for the `Calculator Application` b
 3. Run `npm install` to install dependencies.
 
 ### Running the Application
-To run the application with development server, execute the following command in the `frontend` project directory:
+To run the application with the development server, execute the following command in the `frontend` project directory:
 ```bash
 npm start
 ```
@@ -35,7 +35,7 @@ npm start
 
 #### Usage
 
-The web application functions similar to calculator apps found on Windows, macOS, or mobile devices. It has number keys for entering input and buttons for performing arithmetic and advanced operations. 
+The web application functions similarly to calculator apps found on Windows, macOS, or mobile devices. It has number keys for entering input and buttons for performing arithmetic and advanced operations. 
 
 > **NOTE**: The web application has significant potential for enhancement to include additional features and better handle certain conditions. A detailed list of current fixes and possible enhancement features is available in the `App.js` file located in the `src` folder.  
 
