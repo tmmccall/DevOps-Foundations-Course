@@ -41,7 +41,13 @@ Goldberg CS Building 6050 University Ave.
         - Docker images and containers
         - Basic Docker commands 
   
-3. **Session 3**: On **(November 19)**
+3. **Session 3**: Advanced Docker Concepts and Cloud Computing Fundamentals **(November 19)**
+    - _Core Topics_:
+        - Understanding Docker Compose
+        - Understanding Docker Networks
+        - Understanding Docker Volumes
+        - Microservice Architectures
+        - Basics of Cloud Computing
 
 4. **Session 4**: Final Exam & Project QnA session **(November 26)**
 

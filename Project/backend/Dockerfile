@@ -6,7 +6,7 @@
 
 # Install any needed packages specified in requirements.txt
 
-# Make port 6000 available to the world outside this container
+# Make port 5000 available to the world outside this container
 
 # Define environment variable
 
