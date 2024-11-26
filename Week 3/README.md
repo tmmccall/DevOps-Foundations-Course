@@ -25,7 +25,7 @@ Additionally, We will explore _microservices architecture_ and _fundamentals of 
 - **`DevOps Foundations-Session 3 Slides.pdf`**: In-person session presentation slides.
 
 
-> **Note**: This week does not include a dedicated practice exercise, because the `Project/` serves as an integrated exercise covering concepts from both Week 2 and Week 3. It is highly recommended to complete the Project to effectively understand and apply the Docker and CI/CD concepts learned.
+> **Note**: This week does not include a dedicated practice exercise, because the [`Project/`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Project) serves as an integrated exercise covering concepts from both Week 1 to Week 3. It is highly recommended to complete the Project to effectively understand and apply the Docker and CI/CD concepts learned.
 
 
 ## Helpful Guides and Essential Resources
@@ -65,4 +65,4 @@ Additionally, We will explore _microservices architecture_ and _fundamentals of 
 ## Advanced Material
 - [Docker Containers and Kubernetes Fundamentals - Course](https://www.youtube.com/watch?v=kTp5xUtcalw) - Free Code Camp (Video)
 
---
+---

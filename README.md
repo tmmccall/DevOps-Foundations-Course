@@ -11,8 +11,8 @@ The course consists of in-person sessions held every Tuesdays for four weeks, st
 - **Hands-on pratcical understanding** on the topics learnt
 - and, a fun and interactive **Kahoot Quiz** at the end of the session to test understanding of the topics learnt in class.
 
-### In-Person Session Details:
-Every Tuesdays starting November 5 
+## In-Person Session Details:
+Every Tuesdays starting November 5 to November 26
 (6pm to 8pm)
 
 Room 134 (Lab)
@@ -30,6 +30,7 @@ Goldberg CS Building 6050 University Ave.
         - In-depth focus on Continious Integration (CI) and Continious Delivery/Deployment (CD)
         - _Understanding GitLab CI/CD_ (YAML configuration)
         - _Exploring GitHub Actions_ (YAML configuration)
+    - _Materials available at_: [Go to: Week 1 - Material](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Week%201) 
 
 2. **Session 2**: Containerisation and Orchestration using Docker **(November 12)**
     - _Core Topics_:
@@ -40,6 +41,7 @@ Goldberg CS Building 6050 University Ave.
         - Docker architecture
         - Docker images and containers
         - Basic Docker commands 
+    - _Materials available at_: [Go to: Week 2 - Material](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Week%202) 
   
 3. **Session 3**: Advanced Docker Concepts and Cloud Computing Fundamentals **(November 19)**
     - _Core Topics_:
@@ -48,6 +50,7 @@ Goldberg CS Building 6050 University Ave.
         - Understanding Docker Volumes
         - Microservice Architectures
         - Basics of Cloud Computing
+    - _Materials available at_: [Go to: Week 3 - Material](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Week%203) 
 
 4. **Session 4**: Final Exam & Project QnA session **(November 26)**
 
@@ -59,17 +62,26 @@ Goldberg CS Building 6050 University Ave.
 To receive a certificate of completion, participants must meet the following criteria:
 1. Attend a minimum of 2 out of the first 3 sessions (75% attendance).
 2. Assessments and Deliverables:
-    1. Complete a in-person examination during Session 4 (November 26).
-    2. Submit a takeaway course project, which will be released on Session 2 (November 12) and due one week after Session 4 on December 3.
+    1. Complete a **in-person examination** during Session 4 (November 26).
+    2. Submit a **takeaway course project**, which will be released on Session 2 (November 12) and due on December 4.
+
 
 ## Assessment and Rubric
-1. In-Person Examination:
-    -  Exam Day: November 26th.
-    -  Topics for the Exam: All topics covered in Session 1 through Session 3.
-    -  Exam Duration: 1 hour
-2. Takeaway course project:
-    -  Release Date: November 12th.
-    -  Submission Deadline: December 3rd.
+
+1. **In-Person Examination:**
+   - **Exam Day:** **`November 26th`**
+   - **Duration:** 1 Hour
+   - **Format:** 45 Scenario-Based Multiple-Choice Questions
+   - **Topics Covered:** All topics from **Session 1** through **Session 3**
+   - **Study Resources:** 
+     - Session Materials: [Week 1](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Week%201), [Week 2](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Week%202), [Week 3](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Week%203)
+     - Practice Quizzes and Kahoot Question-Answers: [Click Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Practice%20Quizes)
+
+2. **Takeaway Course Project:**
+   - Release Date: November 12th
+   - **Submission Deadline:** **`December 4th`**
+   - Project Specification & Submission Guidelines: [Click Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Project)
+   - Project Evaluation Criteria: [Click Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/tree/master/Project#evaluation-criteria)
 
 
 ---

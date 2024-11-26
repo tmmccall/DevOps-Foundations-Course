@@ -31,6 +31,9 @@ The following code will be available:
 ### STEP-3: Write Clear Documentation
 - Create a comprehensive README.md with setup instructions and an explanation of the created Dockerfile and YAML configuration.
 
+> Please find the **TODO** template [`Project/SUBMISSION_README.md` Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/SUBMISSION_README.md)
+
+
 ## Technical Requirements
 
 ### 1. Docker Implementation
@@ -42,6 +45,8 @@ The following code will be available:
 - Start running the React app using `npm`.
 - (Optional) Use a lightweight web server (e.g., `nginx:alpine`) to serve the built files.
 
+> Please find the **TODO** template [`Project/frontend/Dockerfile` Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/frontend/Dockerfile)
+
 #### ii. Backend Dockerfile:
 - Use an appropriate base image (e.g., `python:3.9-slim`).
 - Copy `requirements.txt` and install dependencies.
@@ -49,11 +54,17 @@ The following code will be available:
 - Expose the necessary port.
 - Specify the command to run the API server.
 
+> Please find the **TODO** template [`Project/backend/Dockerfile` Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/backend/Dockerfile)
+
+
 #### iii. docker-compose.yml:
 - Define services for both frontend and backend.
 - Map appropriate ports.
 - Set up environment variables.
 - Ensure proper networking between services.
+
+> Please find the **TODO** template [`Project/docker-compose.yaml` Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/docker-compose.yaml)
+
 
 #### iv. (Optional) Environment Variables:
 - Use `.env` files for local development.
@@ -66,6 +77,13 @@ Create a YAML configuration file with the following steps:
 3. Build Docker images for frontend and backend.
 4. Run any tests (Optional).
 5. Push images to Docker Hub (on successful merge to main).
+
+> Please find the **TODO** template GitLab CI [`Project/.gitlab-ci.yml` Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/.gitlab-ci.yml)
+
+**OR**
+
+> Please find the **TODO** template GitHub Actions [`Project/github-actions.yml` Here](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/github-actions.yml)
+
 
 ## Testing Requirements
 
@@ -96,11 +114,11 @@ Create a YAML configuration file with the following steps:
 > **NOTE: (_Form link will be available soon as deadline approaches._)**
 
 ### Submission Checklist 
-- [ ] Frontend Dockerfile 
-- [ ] Backend Dockerfile
-- [ ] docker-compose.yml
-- [ ] CI/CD YAML configuration file
-- [ ] README.md
+- [ ] Frontend Dockerfile  -------------------- ([`Project/frontend/Dockerfile`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/frontend/Dockerfile))
+- [ ] Backend Dockerfile --------------------- ([`Project/backend/Dockerfile`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/backend/Dockerfile))
+- [ ] docker-compose.yml ------------------- ([`Project/docker-compose.yaml`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/docker-compose.yaml))
+- [ ] CI/CD YAML configuration file --------- ([`Project/.gitlab-ci.yml`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/.gitlab-ci.yml)) **OR** ([`Project/github-actions.yml`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/github-actions.yml))
+- [ ] Submission Explanation README.md -- ([`Project/SUBMISSION_README.md`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/SUBMISSION_README.md))
 - [ ] Docker Hub image links
 - [ ] Successful functional testing
 
