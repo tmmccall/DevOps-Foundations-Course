@@ -109,9 +109,9 @@ Create a YAML configuration file with the following steps:
 ### Important Dates
 <!-- - **Project Assigned:** November 15, 2024 -->
 - **Submission Deadline:** December 4, 2024, 11:59 PM
-- **Submission Method:** Online submission form 
+- **Submission Method:** Online submission form [Here](https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu) Or https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu
 
-> **NOTE: (_Form link will be available soon as deadline approaches._)**
+> **NOTE**: [FORM LINK](https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu): https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu**
 
 ### Submission Checklist 
 - [ ] Frontend Dockerfile  -------------------- ([`Project/frontend/Dockerfile`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/frontend/Dockerfile))
