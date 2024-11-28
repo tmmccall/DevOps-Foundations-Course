@@ -3,6 +3,8 @@
 ## Project Overview
 The goal of this project is to assess your understanding of Docker containerization and Continuous Integration/Continuous Deployment (CI/CD) principles. You will be provided with a simple calculator web application consisting of a **React frontend** and a **Python backend**. Your task is to containerize these components, create a multi-container setup using Docker Compose, and implement an automated CI/CD pipeline.
 
+**NOTE**: [Please **submit** your project here](https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu): https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu
+
 ## Learning Objectives
 After successful completion of this project, you will:
 1. Gain practical experience in containerizing existing applications using Docker.
@@ -111,7 +113,7 @@ Create a YAML configuration file with the following steps:
 - **Submission Deadline:** December 4, 2024, 11:59 PM
 - **Submission Method:** Online submission form [Here](https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu) Or https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu
 
-> **NOTE**: [FORM LINK](https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu): https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu**
+> **NOTE**: [FORM LINK](https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu): https://airtable.com/appkB4tLGaUIf7rIf/shr6YX4kY3rUhMTIu
 
 ### Submission Checklist 
 - [ ] Frontend Dockerfile  -------------------- ([`Project/frontend/Dockerfile`](https://github.com/shiftkey-labs/DevOps-Foundations-Course/blob/master/Project/frontend/Dockerfile))
